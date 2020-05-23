@@ -1,0 +1,265 @@
+[
+  {
+    "_id": "5924336b52db48ce58dae0d578011bc4",
+    "_rev": "28-e2fbde1ca0f5bc0de59f60ead1a52222",
+    "start": 1590056542252,
+    "end": 1590056545429,
+    "duration": 3177,
+    "pattern": [
+      {
+        "reading": 0,
+        "sensor": "out",
+        "ts": 1590056542252
+      },
+      {
+        "reading": 1,
+        "sensor": "out",
+        "ts": 1590056542812
+      },
+      {
+        "reading": 0,
+        "sensor": "out",
+        "ts": 1590056543427
+      },
+      {
+        "reading": 1,
+        "sensor": "out",
+        "ts": 1590056544297
+      },
+      {
+        "reading": 0,
+        "sensor": "out",
+        "ts": 1590056544700
+      },
+      {
+        "reading": 1,
+        "sensor": "out",
+        "ts": 1590056545429
+      }
+    ],
+    "type": "passage",
+    "direction": {
+      "set": "out"
+    }
+  },
+  {
+    "_id": "5924336b52db48ce58dae0d578012286",
+    "_rev": "53-d6d6426355c32dc51a52ea725a3284e2",
+    "start": 1590056648866,
+    "end": 1590056649478,
+    "duration": 612,
+    "pattern": [
+      {
+        "reading": 0,
+        "sensor": "out",
+        "ts": 1590056648866
+      },
+      {
+        "reading": 1,
+        "sensor": "out",
+        "ts": 1590056649478
+      }
+    ],
+    "type": "passage",
+    "pet": "first_pet",
+    "direction": {
+      "set": "in"
+    }
+  },
+  {
+    "_id": "5924336b52db48ce58dae0d578013e47",
+    "_rev": "65-049cbe9a43c74d685da50c6a46546214",
+    "start": 1590063836858,
+    "end": 1590063845362,
+    "duration": 8504,
+    "pattern": [
+      {
+        "reading": 0,
+        "sensor": "out",
+        "ts": 1590063836858
+      },
+      {
+        "reading": 1,
+        "sensor": "out",
+        "ts": 1590063837379
+      },
+      {
+        "reading": 0,
+        "sensor": "out",
+        "ts": 1590063838155
+      },
+      {
+        "reading": 1,
+        "sensor": "out",
+        "ts": 1590063838592
+      },
+      {
+        "reading": 0,
+        "sensor": "out",
+        "ts": 1590063839282
+      },
+      {
+        "reading": 1,
+        "sensor": "out",
+        "ts": 1590063842015
+      },
+      {
+        "reading": 0,
+        "sensor": "out",
+        "ts": 1590063845144
+      },
+      {
+        "reading": 1,
+        "sensor": "out",
+        "ts": 1590063845362
+      }
+    ],
+    "type": "passage",
+    "pet": "first_pet",
+    "direction": {
+      "set": "in"
+    }
+  },
+  {
+    "_id": "5924336b52db48ce58dae0d578015e02",
+    "_rev": "3-720db504daac285fc226a66afe476438",
+    "start": 1590075023014,
+    "end": 1590075025215,
+    "duration": 2201,
+    "direction": {
+      "set": "invalid"
+    },
+    "pattern": [
+      {
+        "reading": 0,
+        "sensor": "out",
+        "ts": 1590075023014
+      },
+      {
+        "reading": 1,
+        "sensor": "out",
+        "ts": 1590075023071
+      },
+      {
+        "reading": 0,
+        "sensor": "out",
+        "ts": 1590075023242
+      },
+      {
+        "reading": 1,
+        "sensor": "out",
+        "ts": 1590075025215
+      }
+    ],
+    "type": "passage",
+    "pet": "first_pet"
+  },
+  {
+    "_id": "5924336b52db48ce58dae0d578016a9a",
+    "_rev": "3-534afaf8330c7097c76b19dadf8181d0",
+    "start": 1590075044473,
+    "end": 1590075046343,
+    "duration": 1870,
+    "direction": {
+      "set": "in"
+    },
+    "pattern": [
+      {
+        "reading": 0,
+        "sensor": "out",
+        "ts": 1590075044473
+      },
+      {
+        "reading": 1,
+        "sensor": "out",
+        "ts": 1590075045049
+      },
+      {
+        "reading": 0,
+        "sensor": "out",
+        "ts": 1590075045198
+      },
+      {
+        "reading": 1,
+        "sensor": "out",
+        "ts": 1590075045702
+      },
+      {
+        "reading": 0,
+        "sensor": "out",
+        "ts": 1590075045808
+      },
+      {
+        "reading": 1,
+        "sensor": "out",
+        "ts": 1590075046029
+      },
+      {
+        "reading": 0,
+        "sensor": "out",
+        "ts": 1590075046106
+      },
+      {
+        "reading": 1,
+        "sensor": "out",
+        "ts": 1590075046343
+      }
+    ],
+    "type": "passage",
+    "pet": "first_pet"
+  },
+  {
+    "_id": "5924336b52db48ce58dae0d578017835",
+    "_rev": "2-e89d91009a5b72ba7d3d513ebd2aca4e",
+    "start": 1590075067777,
+    "end": 1590075071353,
+    "duration": 3576,
+    "pattern": [
+      {
+        "reading": 0,
+        "sensor": "out",
+        "ts": 1590075067777
+      },
+      {
+        "reading": 1,
+        "sensor": "out",
+        "ts": 1590075068377
+      },
+      {
+        "reading": 0,
+        "sensor": "out",
+        "ts": 1590075068916
+      },
+      {
+        "reading": 1,
+        "sensor": "out",
+        "ts": 1590075069354
+      },
+      {
+        "reading": 0,
+        "sensor": "out",
+        "ts": 1590075069916
+      },
+      {
+        "reading": 1,
+        "sensor": "out",
+        "ts": 1590075070402
+      },
+      {
+        "reading": 0,
+        "sensor": "out",
+        "ts": 1590075071026
+      },
+      {
+        "reading": 1,
+        "sensor": "out",
+        "ts": 1590075071353
+      }
+    ],
+    "type": "passage",
+    "pet": "first_pet",
+    "direction": {
+      "set": "invalid"
+    }
+  }
+]
