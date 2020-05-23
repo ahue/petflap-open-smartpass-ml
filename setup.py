@@ -7,6 +7,9 @@ setup(
     include_package_data=True,
     install_requires=[
         'Click',
+        "pandas",
+        "scikit-learn",
+        "numpy"
     ],
     entry_points='''
         [console_scripts]
