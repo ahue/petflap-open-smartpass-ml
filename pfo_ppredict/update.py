@@ -46,9 +46,10 @@ def create_df(passages):
 
   y = [p["direction"]["set"] for p in passages]
 
-  X = pd.DataFrame([ utl.densify_pattern(p["pattern"], 600) +
-  [p["duration"]] + utl.feat_daily(p["start"])
-   for p in passages])
+  X = passages
+  # pd.DataFrame([ utl.densify_pattern(p["pattern"], 600) +
+  # [p["duration"]] + utl.feat_daily(p["start"])
+  #  for p in passages])
 
   return (X, y)
 
@@ -57,7 +58,9 @@ def build_model(X, y):
 
   X_train, X_test, y_train, y_test = train_test_split(X, y)
   
-  pipln = make_pipeline(StandardScaler(),
+  pipln = make_pipeline(
+                    utl.PassagePreprocessor(600),
+                    StandardScaler(),
                      MLPClassifier(hidden_layer_sizes=(13,13,13),max_iter=500)
                      )
   

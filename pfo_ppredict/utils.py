@@ -2,6 +2,23 @@
 import numpy as np
 from datetime import datetime, time
 import math
+from sklearn.base import BaseEstimator, TransformerMixin
+import pandas as pd
+
+
+
+class PassagePreprocessor(BaseEstimator, TransformerMixin):
+
+  def __init__(self, dense_pat_len):
+    self._dense_pat_len = dense_pat_len
+
+  def fit(self, X, y=None):
+    return self
+
+  def transform(self, X, y=None):
+    return pd.DataFrame([ densify_pattern(p["pattern"], self._dense_pat_len) +
+      [p["duration"]] + feat_daily(p["start"])
+      for p in X])
 
 # %%
 def scale(x, min_x, max_x,  a, b):
