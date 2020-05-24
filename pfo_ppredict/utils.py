@@ -59,7 +59,7 @@ def feat_daily(ts):
   utcnow = datetime.utcnow()
   midnight = datetime.combine(dt_obj.date(), time(0))
   delta = dt_obj - midnight
-  print(delta.seconds)  # <-- careful
+  # print(delta.seconds)  # <-- careful
   feat = [math.sin(math.pi * delta.seconds / (24 * 60 * 60 / 2)),
     math.cos(math.pi * delta.seconds / (24 * 60 * 60 / 2))]
   return feat
