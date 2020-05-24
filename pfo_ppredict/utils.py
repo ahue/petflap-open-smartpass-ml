@@ -44,7 +44,7 @@ def densify_pattern(pattern, length):
           else: # sensor = in
             fill = 2
 
-        print(xl)
+        # print(xl)
         dense_pat[xl:xr] = fill
         
   return dense_pat.tolist()
