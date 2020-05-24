@@ -15,6 +15,7 @@ from sklearn.pipeline import make_pipeline
 from . import utils as utl
 
 import pickle as pkl
+import os
 # import codecs
 
 # %%
@@ -76,10 +77,12 @@ def build_model(X, y):
 
 # %%
 def store_model(mdl, target):
+  os.makedirs(os.path.dirname(target), exist_ok=True)
   with open(target, "wb") as f:
     pkl.dump(mdl, f)
   
 # %%
 def store_report(report, target):
+  os.makedirs(os.path.dirname(target), exist_ok=True)
   with open(target, "w") as f:
     json.dump(report, f)
