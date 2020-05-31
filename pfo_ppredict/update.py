@@ -14,6 +14,7 @@ from sklearn.pipeline import make_pipeline
 
 from . import utils as utl
 
+import time
 import pickle as pkl
 import os
 # import codecs
@@ -74,6 +75,7 @@ def build_model(X, y):
   predictions = pipln.predict(X_test)
 
   report = classification_report(y_test, predictions, output_dict=True)
+  report["timestamp"] = int(round(time.time() * 1000))
   
   return (pipln, report)
 
