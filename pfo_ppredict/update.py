@@ -45,7 +45,9 @@ def load_data(src):
 # %%
 def create_df(passages):
 
-  y = [p["direction"]["set"] for p in passages]
+  y = [
+    p["direction"]["set"] if "set" in p["direction"] else p["direction"]["predicted"]
+  for p in passages]
 
   X = passages
   # pd.DataFrame([ utl.densify_pattern(p["pattern"], 600) +
