@@ -50,6 +50,7 @@ async def update(ch, pub):
       msg = await ch.get_json()
       
       logging.info("Got Message: {}".format(msg))
+      logging.info(type(msg))
       
       if ("data" not in msg or
         "target" not in msg or
