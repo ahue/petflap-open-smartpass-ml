@@ -9,7 +9,8 @@ setup(
         'Click',
         "pandas",
         "scikit-learn",
-        "numpy"
+        "numpy",
+        "aioredis"
     ],
     entry_points='''
         [console_scripts]
