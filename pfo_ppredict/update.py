@@ -33,7 +33,7 @@ def update(src, target, report_target):
 
   store_report(result[1], report_target)
 
-  pass
+  return True
 
 
 # %%

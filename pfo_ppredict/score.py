@@ -19,7 +19,8 @@ def score(model, data):
   
   mdl = load_model(model)
 
-  data = parse_data(data)
+  if type(data) is not dict:
+    data = parse_data(data)
 
   if type(data) != list:
     X = [data]
