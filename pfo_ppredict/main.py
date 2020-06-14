@@ -6,6 +6,17 @@ import json
 import sys
 import asyncio
 import traceback
+import os
+
+import logging
+
+log_dir = "/var/log/pfo/smartpass"
+log_file = log_dir + "/model_server.log"
+if not os.path.exists(log_dir):
+    os.makedirs(log_dir, exist_ok=True)
+
+logging.basicConfig(level=logging.INFO, filename=log_file)
+logging.getLogger().addHandler(logging.StreamHandler(sys.stdout))
 
 @click.group()
 def cli():
@@ -26,7 +37,7 @@ def update(data, target, report):
 def score(model, data):
     """Use the model."""
     scores = scr.score(model, data)
-    print(json.dumps(scores))
+    logging.info(json.dumps(scores))
     sys.exit(0)
 
 @cli.command()
@@ -36,7 +47,7 @@ def score(model, data):
 
 def run(host, port, kill):
     """Run a service that listens to redis channels."""
-    import os
+    
     import signal
 
     pid_dir = "/tmp/pfo/smartpass"
@@ -52,8 +63,8 @@ def run(host, port, kill):
             try:
                 os.kill(int(pid), signal.SIGTERM)
             except Exception:
-                print(f"Trace: {traceback.format_exc()}")
-                print("Could not kill PID {}".format(pid))
+                logging.warn(f"Trace: {traceback.format_exc()}")
+                logging.warn("Could not kill PID {}".format(pid))
         else:
             raise Exception("Already instance running with PID {}".format(pid))
             
@@ -65,7 +76,7 @@ def run(host, port, kill):
     try:
         asyncio.run(sub.main(host, port))
     except (Exception, KeyboardInterrupt) as e:
-        print(f"Trace: {traceback.format_exc()}")
+        logging.error(f"Trace: {traceback.format_exc()}")
         os.remove(pid_file)
         raise e
         

@@ -7,6 +7,8 @@ import aioredis
 from aioredis.pubsub import Receiver
 import traceback
 
+import logging
+
 async def score(ch, pub):
   """
   expected message structure:
@@ -15,11 +17,11 @@ async def score(ch, pub):
     "data": #either json encoded data or base64 encoded json string
   }
   """
-  print("Started score subscription")
+  logging.info("Started score subscription")
   while (await ch.wait_message()):
     try:  
       msg = await ch.get_json()
-      print("Got Message:", msg)
+      logging.info("Got Message: {}".format(msg))
 
       if ("model" not in msg or
         "data" not in msg):
@@ -31,7 +33,7 @@ async def score(ch, pub):
         pub.publish_json("ch:smartpass_score_result", score)
 
     except Exception as e:
-      print(f"Trace: {traceback.format_exc()}")
+      logging.error(f"Trace: {traceback.format_exc()}")
 
 async def update(ch, pub):
   """
@@ -42,12 +44,12 @@ async def update(ch, pub):
     "report": #path where to put report
   }
   """  
-  print("Started update subscription")
+  logging.info("Started update subscription")
   while (await ch.wait_message()):
     try:  
       msg = await ch.get_json()
       
-      print("Got Message:", msg)
+      logging.info("Got Message: {}".format(msg))
       
       if ("data" not in msg or
         "target" not in msg or
@@ -62,7 +64,7 @@ async def update(ch, pub):
       if res:
         pub.publish_json("ch:smartpass_update_complete", {"complete": True})
     except Exception as e:
-      print(f"Trace: {traceback.format_exc()}")
+      logging.error(f"Trace: {traceback.format_exc()}")
 
 async def main(host, port):
   pub = await aioredis.create_redis(
